@@ -37,9 +37,9 @@ public class App {
 
     // Método para transferir entre cuentas
     public static Map<String, Integer> transfer(Map<String, Integer> accounts, String fromAccount, String toAccount, int amount) {
-        if (amount <= 0 || fromAccount.equals(toAccount) || 
-            !accounts.containsKey(fromAccount) || !accounts.containsKey(toAccount) ||
-            accounts.get(fromAccount) < amount) {
+        if (amount <= 0 || fromAccount.equals(toAccount) ||
+                !accounts.containsKey(fromAccount) || !accounts.containsKey(toAccount) ||
+                accounts.get(fromAccount) < amount) {
             throw new IllegalArgumentException("Invalid transfer.");
         }
         Map<String, Integer> updatedAccounts = new HashMap<>(accounts);
